@@ -62,27 +62,27 @@ const ListBarang = () => {
     },
   ];
 
-  var columns2 = [
-    { title: "Kode SKU", data: "kode_sku" },
-    { title: "Nama Barang", data: "nama_barang" },
-    {
-      title: "Foto Barang",
-      format: (row) => (
-        <a href={row.foto_barang} target="_blank">
-          <img
-            style={{ width: "50px" }}
-            src={row.foto_barang}
-            alt={row.title}
-          />
-        </a>
-      ),
-    },
-    { title: "QTY", data: "qty" },
-    {
-      title: "Harga Satuan",
-      format: (row) => `Rp. ${formatRupiah(row.harga_satuan)}`,
-    },
-  ];
+  // var columns2 = [
+  //   { title: "Kode SKU", data: "kode_sku" },
+  //   { title: "Nama Barang", data: "nama_barang" },
+  //   {
+  //     title: "Foto Barang",
+  //     format: (row) => (
+  //       <a href={row.foto_barang} target="_blank">
+  //         <img
+  //           style={{ width: "50px" }}
+  //           src={row.foto_barang}
+  //           alt={row.title}
+  //         />
+  //       </a>
+  //     ),
+  //   },
+  //   { title: "QTY", data: "qty" },
+  //   {
+  //     title: "Harga Satuan",
+  //     format: (row) => `Rp. ${formatRupiah(row.harga_satuan)}`,
+  //   },
+  // ];
 
   const deleteData = (kode_sku) => {
     const url = `https://601b8cde59fa2c0017560c6a.mockapi.io/ListBarang/${kode_sku}`;
@@ -94,7 +94,7 @@ const ListBarang = () => {
   return (
     <div className={style.container}>
       <h3>List Barang</h3>
-      {!checkLogin() && (
+      {/* {!checkLogin() && (
         <DataTable
           data={data}
           columns={columns2}
@@ -102,7 +102,7 @@ const ListBarang = () => {
           hover={true}
           responsive={true}
         />
-      )}
+      )} */}
 
       {checkLogin() && (
         <>

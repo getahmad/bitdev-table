@@ -58,6 +58,7 @@ const EditBarang = () => {
           type="text"
           id="nama_barang"
           name="nama_barang"
+          value={data.nama_barang}
           onChange={(e) => setNamaBarang(e.target.value)}
           placeholder="nama barang"
         />
@@ -77,6 +78,7 @@ const EditBarang = () => {
           type="number"
           id="qty"
           name="qty"
+          defaultValue={data.qty}
           placeholder="jumlah qty"
           onChange={(e) => setQty(e.target.value)}
         />
@@ -87,6 +89,7 @@ const EditBarang = () => {
           type="number"
           id="harga_satuan"
           name="harga_satuan"
+          defaultValue={data.harga_satuan}
           onChange={(e) => setHargaSatuan(e.target.value)}
           placeholder="harga_satuan"
         />

@@ -1,0 +1,42 @@
+.imageBarang {
+    min-height: 240px;
+    max-height: 240px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.title {
+    min-height: 40px;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    border: 2px solid  #3581C2;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgba(98, 172, 211, 0.2);
+
+}
+
+.card h6 {
+    margin: 10px 15px;
+    text-align: center;
+
+}
+
+.card p {
+    margin: 0 15px;
+    margin-bottom: 0;
+}
+
+.containerLoader{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
