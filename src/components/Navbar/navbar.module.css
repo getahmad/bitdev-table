@@ -1,0 +1,38 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 120px;
+    background-color: #3581C2;
+    overflow: auto;
+    z-index: 99;
+}
+
+.brand {
+    float: left;
+}
+
+.navbar a {
+    float: right;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    background-color: #61A745;
+}
+
+
+@media screen and (max-width: 500px) {
+    .brand {
+        float: none;
+        display: block;
+    }
+
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}

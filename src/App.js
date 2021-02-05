@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./components/Login/login";
+import Register from "./components/Register/register";
+import Logout from "./components/Logout/logout";
+import AddBarang from "./components/ListBarang/addBarang";
+import "./App.css";
+import EditBarang from "./components/ListBarang/editBarang";
+import { checkLogin } from "./Helper";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/edit-barang/:kode_sku">
+          {checkLogin() && <EditBarang />}
+        </Route>
+        <Route path="/tambah-barang">{checkLogin() && <AddBarang />}</Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/logout">
+          <Logout />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
