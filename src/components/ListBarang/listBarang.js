@@ -57,6 +57,14 @@ const ListBarang = () => {
           >
             <i className="fa fa-fw fa-trash" /> Delete
           </button>
+
+          <button
+            type="button"
+            className={style.buttonStyle}
+            onClick={() => favoriteData(row.kode_sku)}
+          >
+            Favorit
+          </button>
         </>
       ),
     },
@@ -91,6 +99,15 @@ const ListBarang = () => {
     });
   };
 
+  const [favData, setFavData] = useState([]);
+
+  const favoriteData = (kode_sku) => {
+    const favDataPush = favData.concat([kode_sku]);
+    setFavData(favDataPush);
+    // console.log(favData.push(kode_sku));
+    // console.log(kode_sku);
+  };
+
   return (
     <div className={style.container}>
       <h3>List Barang</h3>
@@ -122,6 +139,13 @@ const ListBarang = () => {
             hover={true}
             responsive={true}
           />
+
+          <h1>favorite</h1>
+          {favData.map((data, index) => (
+            <ul key={index}>
+              <li>{data}</li>
+            </ul>
+          ))}
         </>
       )}
     </div>

@@ -24,7 +24,6 @@ const Register = () => {
       password: password,
     };
     axios.post(url, bodyData).then((res) => {
-      console.log(res.data);
       Cookies.set("id", res.data.id);
       Cookies.set("nama", res.data.nama);
       Cookies.set("email", res.data.email);

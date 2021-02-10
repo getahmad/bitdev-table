@@ -19,6 +19,10 @@ const EditBarang = () => {
     const url = `https://601b8cde59fa2c0017560c6a.mockapi.io/ListBarang/${kode_sku}`;
     axios.get(url).then((res) => {
       setData(res.data);
+      setNamaBarang(res.data.nama_barang);
+      setFotoBarang(res.data.foto_barang);
+      setQty(res.data.qty);
+      setHargaSatuan(res.data.harga_satuan);
     });
   }, [kode_sku]);
 
@@ -34,7 +38,7 @@ const EditBarang = () => {
       harga_satuan: hargaSatuan,
     };
     axios.put(url, bodyData).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       history.push("/");
       setLoading(false);
     });
@@ -58,9 +62,8 @@ const EditBarang = () => {
           type="text"
           id="nama_barang"
           name="nama_barang"
-          value={data.nama_barang}
+          defaultValue={data.nama_barang}
           onChange={(e) => setNamaBarang(e.target.value)}
-          placeholder="nama barang"
         />
         <br />
         <label htmlFor="foto_barang">Foto Barang</label>
@@ -69,6 +72,7 @@ const EditBarang = () => {
           type="file"
           id="foto_barang"
           name="foto_barang"
+          defaultValue={data.foto_barang}
           onChange={(e) => setFotoBarang(e.target.value)}
         />
         <br />
